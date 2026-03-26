@@ -19,6 +19,7 @@ cv2.rectangle(imgTest, (faceLocationTest[3], faceLocationTest[0]), (faceLocation
 results = face_recognition.compare_faces([encodeElon], encodeTest)
 faceDistance = face_recognition.face_distance([encodeElon], encodeTest) # lower distance = better match
 print(results, faceDistance)
+cv2.putText(imgTest, f'{results} {round(faceDistance[0], 2)}', (50,50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2)
 
 cv2.imshow('Elon Musk', imgElon)
 cv2.imshow('Elon Test', imgTest)
